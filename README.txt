@@ -1,4 +1,4 @@
-Usage: bloomfilter.py input_filename dictionary_filename bitarray_size [-b | -d | -f | -h]
+Usage: python3 bloomfilter.py input_filename dictionary_filename bitarray_size [-b | -d | -f | -h]
 
 Required Command Line Argument:
 input_filename          input file to check against dictionary's filter

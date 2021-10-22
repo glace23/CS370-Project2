@@ -71,15 +71,14 @@ class BloomFilter:
         :return:
             None
         """
-        item.encode(encoding='utf-8', errors='replace')
         # set bitarray for hash count times
         for i in range(0, self.hash_count):
             # Initialize hash value for first loop
             if i == 0:
-                hash_item = MD5.new(data=bytearray(item, encoding='utf-8'))
+                hash_item = MD5.new(data=bytearray(item, encoding='ascii'))
             # Update hash value for subsequent loop
             else:
-                hash_item.update(data=bytearray(item, encoding='utf-8'))
+                hash_item.update(data=bytearray(item, encoding='ascii'))
 
             # Get index for bit array
             # Digest hex hash value and convert to decimal
@@ -98,14 +97,13 @@ class BloomFilter:
         :rtype:
             boolean
         """
-        item.encode(encoding='utf-8', errors='replace')
         for i in range(0, self.hash_count):
             # Initialize hash value for first loop
             if i == 0:
-                hash_item = MD5.new(data=bytearray(item, encoding='utf-8'))
+                hash_item = MD5.new(data=bytearray(item, encoding='ascii'))
             # Update hash value for subsequent loop
             else:
-                hash_item.update(data=bytearray(item, encoding='utf-8'))
+                hash_item.update(data=bytearray(item, encoding='ascii'))
 
             # Get index for bit array
             # Digest hex hash value and convert to decimal

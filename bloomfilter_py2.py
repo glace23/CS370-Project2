@@ -203,8 +203,7 @@ if __name__ == "__main__":
                 print(item, ": Not present")
 
         # Print result data
-        print("\n"
-              "False Positive Rate: ", bf.get_false_positive_rate(), "\n"
-              "Optimal Hash Count: ", bf.get_hash_count(), "\n"
-              "Bitarray Size: ", m
-              )
+        print()
+        print("False Positive Rate: ", bf.get_false_positive_rate(), "\n")
+        print("Optimal Hash Count: ", bf.get_hash_count(), "\n")
+        print("Bitarray Size: ", m)

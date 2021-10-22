@@ -1,0 +1,21 @@
+17: Possibly present
+*holly&ben: Possibly present
+*homo*: Possibly present
+*vanusa*: Possibly present
+010605: Possibly present
+010605: Possibly present
+walton-dutch-luzon-post: Possibly present
+012190: Possibly present
+0121909334: Not present
+maskflower: Possibly present
+2,,{H99*X(: Possibly present
+darry-bethel-cube-mess: Not present
+masking: Possibly present
+undersupplied: Possibly present
+undersupplies: Possibly present
+7^*.$?GC86: Possibly present
+undersupply: Possibly present
+9Ca5B>w8.Q}bhU=ss*sK: Possibly present
+
+Optimal Hash Count: 1
+False Positive Rate: 0.464

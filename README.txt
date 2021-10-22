@@ -10,3 +10,5 @@ Optional Command Line Argument:
 -d                      outputs false positive rate and optimal hash output
 -f                      outputs false positive rate
 -h                      outputs optimal hash rate
+
+# File Encoding = utf-8

@@ -71,6 +71,7 @@ class BloomFilter:
         :return:
             None
         """
+        item.encode(encoding='utf-8', error='replace')
         # set bitarray for hash count times
         for i in range(0, self.hash_count):
             # Initialize hash value for first loop
@@ -97,6 +98,7 @@ class BloomFilter:
         :rtype:
             boolean
         """
+        item.encode(encoding='utf-8', error='replace')
         for i in range(0, self.hash_count):
             # Initialize hash value for first loop
             if i == 0:

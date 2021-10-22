@@ -71,15 +71,14 @@ class BloomFilter:
         :return:
             None
         """
-        item.encode(encoding='utf-8', error='replace')
         # set bitarray for hash count times
         for i in range(0, self.hash_count):
             # Initialize hash value for first loop
             if i == 0:
-                hash_item = MD5.new(data=bytearray(item))
+                hash_item = MD5.new(data=bytearray(item, encoding='utf-8'))
             # Update hash value for subsequent loop
             else:
-                hash_item.update(data=bytearray(item))
+                hash_item.update(data=bytearray(item, encoding='utf-8'))
 
             # Get index for bit array
             # Digest hex hash value and convert to decimal

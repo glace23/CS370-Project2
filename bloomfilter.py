@@ -73,7 +73,7 @@ class BloomFilter:
         """
 
         # encode string
-        item.encode()
+        item.encode(errors="replace")
 
         # set bitarray for hash count times
         for i in range(0, self.hash_count):

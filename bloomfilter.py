@@ -34,7 +34,7 @@ class BloomFilter:
         self.bitarray.setall(0)
 
         # encoding type
-        self.encoding = "iso-8859-1"
+        self.encoding = "utf-8"
 
     def get_hash_count(self):
         """
@@ -148,8 +148,9 @@ if __name__ == "__main__":
             input = f.readlines()
 
         # get lines from arg3 dictionary file
-        with open(arg3) as f:
-            dictionary = f.readlines()
+        f = open(arg3, encoding='iso-8859-1', errors='ignore')
+        dictionary = f.readlines()
+        f.close()
 
         # Dictionary size
         n = len(dictionary)

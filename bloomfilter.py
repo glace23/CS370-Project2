@@ -22,8 +22,8 @@ class BloomFilter:
         # size of bit array
         self.array_size = m
 
-        # set number of hash functions
-        self.hash_count = int((self.array_size / self.dictionary_size) * math.log(2))
+        # set number of hash functions, minimum is 1
+        self.hash_count = int((self.array_size / self.dictionary_size) * math.log(2)) + 1
 
         # set false positive rate
         self.false_positive = (1 - math.e ** (
@@ -136,7 +136,7 @@ if __name__ == "__main__":
             arg5 = None
 
         # Check error if arg4 is not integer
-        if not arg4.isdigit():
+        if not arg4.isdigit() or int(arg4) <= 0:
             print("Bitarray size is invalid!")
             quit(1)
 
@@ -166,10 +166,6 @@ if __name__ == "__main__":
             elif arg5 == "-h":
                 print(f"Optimal Hash Count: {bf.get_hash_count()}")
                 quit(1)
-            # Print bit array
-            elif arg5 == "-b":
-                print(f"Bit Array: {bf.get_bit_array()}")
-                quit(1)
             # Print False Positive Rate and Optimal Hash Count
             elif arg5 == "-d":
                 print(f"False Positive Rate: {bf.get_false_positive_rate()}")
@@ -177,13 +173,13 @@ if __name__ == "__main__":
                 quit(1)
 
         # Error check for hash count
-        if bf.get_hash_count() == 0:
+        if bf.get_hash_count() <= 0:
             print("Bit Array is too small for dictionary set!\n"
-                  "Optimal Hash Count is 0.")
+                  "Optimal Hash Count is not positive.")
             quit(1)
 
-        # Error check for False Positive Rate
-        if bf.get_false_positive_rate() == 1:
+        # # Error check for False Positive Rate
+        if bf.get_false_positive_rate() < 0 or bf.get_false_positive_rate() > 1:
             print("Bit Array is too small for dictionary set!\n"
                   "False Positive Rate is 1.")
             quit(1)
@@ -192,6 +188,13 @@ if __name__ == "__main__":
         for line in dictionary:
             item = line.rstrip("\n")
             bf.add(item)
+
+        # Optional Command Line Argument
+        if arg5 is not None:
+            # Print bit array
+            if arg5 == "-b":
+                print(f"Bit Array: {bf.get_bit_array()}")
+                quit(1)
 
         # Check input items in filter
         for line in input:
@@ -205,6 +208,6 @@ if __name__ == "__main__":
         # Print result data
         print("\n"
               f"Optimal Hash Count: {bf.get_hash_count()}\n"
-              f"False Positive Rate: {bf.get_false_positive_rate()}"
+              f"False Positive Rate: {bf.get_false_positive_rate()}\n"
               f"Bitarray Size: {m}"
               )

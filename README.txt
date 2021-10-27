@@ -1,3 +1,4 @@
+# File Encoding = utf-8
 Usage: python3 bloomfilter.py input_filename dictionary_filename bitarray_size [-b | -d | -f | -h]
 
 Required Command Line Argument:
@@ -11,4 +12,3 @@ Optional Command Line Argument:
 -f                      outputs false positive rate
 -h                      outputs optimal hash rate
 
-# File Encoding = utf-8

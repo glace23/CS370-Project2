@@ -144,8 +144,9 @@ if __name__ == "__main__":
             quit(1)
 
         # get lines from arg2 input file
-        with open(arg2) as f:
-            input = f.readlines()
+        f = open(arg3, encoding='utf-8', errors='ignore')
+        input = f.readlines()
+        f.close()
 
         # get lines from arg3 dictionary file
         f = open(arg3, encoding='iso-8859-1', errors='ignore')

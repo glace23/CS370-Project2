@@ -54,7 +54,7 @@ class BloomFilter:
         :rtype:
             float
         """
-        return round(self.false_positive, 3)
+        return self.false_positive
 
     def get_bit_array(self):
         """

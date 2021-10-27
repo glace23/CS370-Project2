@@ -33,6 +33,9 @@ class BloomFilter:
         self.bitarray = bitarray(self.array_size)
         self.bitarray.setall(0)
 
+        # encoding type
+        self.encoding = "iso-8859-1"
+
     def get_hash_count(self):
         """
         Get the number of hash counts
